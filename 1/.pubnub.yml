@@ -1,0 +1,192 @@
+name: java
+version: 4.3.0
+schema: 1
+scm: github.com/pubnub/java
+changelog:
+  - version: v4.3.0
+    date:
+    changes:
+      - type: improvement
+        text: JSON parser is switched to GSON, new artifact on nexus as pubnub-gson
+      - type: improvement
+        text: GetState, setState return a JsonElement instead of a plain object.
+  - version: v4.2.3
+    date:
+    changes:
+      - type: improvement
+        text: Swapping out logger for slf4japi and removing final methods
+  - version: v4.2.2
+    date:
+    changes:
+      - type: improvement
+        text: remove final identifiers from the public facing API.
+  - version: v4.2.1
+    date:
+    changes:
+      - type: improvement
+        text: include publisher UUID on incoming message
+      - type: improvement
+        text: allow to set custom TTL on a publish
+  - version: v4.2.0
+    date:
+    changes:
+      - type: improvement
+        text: Signatures are generated for all requests with secret key to ensure secure transmission of data
+      - type: improvement
+        text: support for alerting of queue exceeded (PNRequestMessageCountExceededCategory)
+      - type: improvement
+        text: signaling to okhttp to stop the queues on termination.
+  - version: v4.1.0
+    date:
+    changes:
+      - type: improvement
+        text: destory now correctly forces the producer thread to shut down; stop is now deprecated for disconnect
+      - type: improvement
+        text: support for sending instance id for presence detection (disabled by default)
+      - type: improvement
+        text: support for sending request id to burst cache (enabled by default)
+      - type: improvement
+        text: proxy support via the native proxy configurator class.
+  - version: v4.0.14
+    date:
+    changes:
+      - type: improvement
+        text: on PAM error, populate the affectedChannel or affectedChannelGroup to signal which channels are failing
+  - version: v4.0.13
+    date:
+    changes:
+      - type: improvement
+        text: populate jso with the error.
+  - version: v4.0.12
+    date:
+    changes:
+      - type: bug
+        text: fixing parsing of origination payload within the psv2 enevelope
+  - version: v4.0.11
+    date:
+    changes:
+      - type: improvement
+        text: bumping build process for gradle 3 / merging documentation into the repo and test adjustments
+  - version: v4.0.10
+    date:
+    changes:
+      - type: improvement
+        text: adding channel / channelGroup fields when a message / presence event comes in.
+  - version: v4.0.9
+    date:
+    changes:
+      - type: improvement
+        text: adjustments for handling pn_other and decryption
+      - type: improvement
+        text: retrofit version bumps.
+  - version: v4.0.8
+    date:
+    changes:
+      - type: feature
+        text: added unsubscribeAll, getSubscribedChannels, getSubscribedChannelGroups
+      - type: feature
+        text: SDK will establish secure connections by default
+      - type: feature
+        text: added support for exponential backoff reconnection policies
+  - version: v4.0.7
+    date: 
+    changes:
+      - type: improvement
+        text: reduce overlap on error handling when returning exceptions.
+  - version: v4.0.6
+    changes:
+      - type: improvement
+        text: send heartbeat presence value when subscribing
+  - version: v4.0.5
+    changes:
+      - type: improvement
+        text: unified retrofit handling to lower amount of instances and sync'd the state methods.
+  - version: v4.0.4
+    changes:
+      - type: bug
+        text: setting State for other UUID's is now supported.
+  - version: v4.0.3
+    changes:
+      - type: feature
+        text: fire() method and no-replicaton options.
+  - version: v4.0.2
+    changes:
+      - type: bug
+        text: fix to the version fetching.
+  - version: v4.0.1
+    changes:
+      - type: bug
+        text: adjustment of the subscribe loop to alleviate duplicate dispatches.
+  - version: v4.0.0
+    changes:
+      - type: bug
+        text: first GA.
+  - version: v4.0.0-beta4
+    changes:
+      - type: improvement
+        text: reconnects and minor adjustments.
+  - version: v4.0.0-beta3
+    changes:
+      - type: bug
+        text: fixing state not coming on the subscriber callback.
+      - type: bug
+        text: adjustments to URL encoding on publish, subscribe, set-state operations to avoid double encoding with retrofit.
+  - version: v4.0.0-beta2
+    changes:
+      - type: improvement
+        text: reworking of message queue.
+      - type: improvement
+        text: checkstyle, findbugs.
+      - type: improvement
+        text: reworking error notifications.
+  - version: v4.0.0-beta1
+    changes:
+      - type: improvement
+        text: initial beta1.
+features:
+  access:
+    - ACCESS-GRANT
+  channel-groups:
+    - CHANNEL-GROUPS-ADD-CHANNELS
+    - CHANNEL-GROUPS-REMOVE-CHANNELS
+    - CHANNEL-GROUPS-REMOVE-GROUPS
+    - CHANNEL-GROUPS-LIST-CHANNELS-IN-GROUP
+  notify:
+    - REQUEST-MESSAGE-COUNT-EXCEEDED
+  push:
+    - PUSH-ADD-DEVICE-TO-CHANNELS
+    - PUSH-REMOVE-DEVICE-FROM-CHANNELS
+    - PUSH-LIST-CHANNELS-FROM-DEVICE
+    - PUSH-REMOVE-DEVICE
+  presence:
+    - PRESENCE-HERE-NOW
+    - PRESENCE-WHERE-NOW
+    - PRESENCE-SET-STATE
+    - PRESENCE-GET-STATE
+    - PRESENCE-HEARTBEAT
+  publish:
+    - PUBLISH-STORE-FLAG
+    - PUBLISH-RAW-JSON
+    - PUBLISH-WITH-METADATA
+    - PUBLISH-GET
+    - PUBLISH-POST
+    - PUBLISH-ASYNC
+    - PUBLISH-FIRE 
+    - PUBLISH-REPLICATION-FLAG
+    - PUBLISH-MESSAGE-TTL
+  storage:
+    - STORAGE-REVERSE
+    - STORAGE-INCLUDE-TIMETOKEN
+    - STORAGE-START-END
+    - STORAGE-COUNT
+  time:
+    - TIME-TIME
+  subscribe:
+    - SUBSCRIBE-CHANNELS
+    - SUBSCRIBE-CHANNEL-GROUPS
+    - SUBSCRIBE-PRESENCE-CHANNELS
+    - SUBSCRIBE-PRESENCE-CHANNELS-GROUPS
+    - SUBSCRIBE-WITH-TIMETOKEN
+    - SUBSCRIBE-WILDCARD
+    - SUBSCRIBE-FILTER-EXPRESSION
+    - SUBSCRIBE-PUBLISHER-UUID

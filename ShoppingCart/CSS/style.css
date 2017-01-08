@@ -1,0 +1,51 @@
+body{
+opacity:1;
+background-image: url("../images/shop1.jpg");
+-moz-background-size: cover;
+background-repeat:no-repeat;
+back
+}
+
+h1{
+font-size: 60px;
+font-family: Helvetica,serif;
+text-align: center;
+
+}
+
+#lefty{
+margin-left:13%;
+font-size:20px;
+margin-top:10px;
+}
+
+input{
+font-size: 20px;
+}
+
+table,td,tr{
+text-align:center;
+font-size:17px;
+line-height:7px;
+margin-top: 3px;
+border : 15px;
+padding: 14px;
+}
+
+
+select{
+font-size:20px;
+}
+
+#nametext{
+font-size: 30px;
+font-family: Georgia,serif;
+text-align: center;
+}
+
+#key
+{
+font-size: 15px;
+font-family: Georgia,serif;
+text-align: center;
+}
